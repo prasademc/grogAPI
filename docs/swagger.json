@@ -1,0 +1,187 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"Beer": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"style": {
+						"type": "string"
+					},
+					"alcoholContent": {
+						"type": "string"
+					},
+					"discription": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"style",
+					"alcoholContent",
+					"discription"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "grogapi",
+		"version": "1.0.0",
+		"description": "Have you ever wanted to search through the Australian catalogue of beer in a programmatic way? Maybe build a tool that shares details of all beers in Australia, or search beers, which are Ale? Well, now your prayers have been answered!",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {
+			"name": "Chaminda Egalla"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/beer": {
+			"get": {
+				"operationId": "GetAll",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/Beer"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "Create",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"discription": {
+										"type": "string"
+									},
+									"alcoholContent": {
+										"type": "string"
+									},
+									"style": {
+										"type": "string"
+									},
+									"name": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"discription",
+									"alcoholContent",
+									"style",
+									"name"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/beer/{id}": {
+			"put": {
+				"operationId": "Update",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"discription": {
+										"type": "string"
+									},
+									"alcoholContent": {
+										"type": "string"
+									},
+									"style": {
+										"type": "string"
+									},
+									"name": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"discription",
+									"alcoholContent",
+									"style",
+									"name"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "Delete",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
