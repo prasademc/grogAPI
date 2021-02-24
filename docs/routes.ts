@@ -12,10 +12,11 @@ const models: TsoaRoute.Models = {
     "Beer": {
         "dataType": "refObject",
         "properties": {
+            "_id": {"dataType":"string","required":true},
             "name": {"dataType":"string","required":true},
             "style": {"dataType":"string","required":true},
             "alcoholContent": {"dataType":"string","required":true},
-            "discription": {"dataType":"string","required":true},
+            "description": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -54,7 +55,7 @@ export function RegisterRoutes(app: express.Router) {
         app.post('/beer',
             function (request: any, response: any, next: any) {
             const args = {
-                    requestBody: {"in":"body","name":"requestBody","required":true,"dataType":"nestedObjectLiteral","nestedProperties":{"discription":{"dataType":"string","required":true},"alcoholContent":{"dataType":"string","required":true},"style":{"dataType":"string","required":true},"name":{"dataType":"string","required":true}}},
+                    requestBody: {"in":"body","name":"requestBody","required":true,"dataType":"nestedObjectLiteral","nestedProperties":{"description":{"dataType":"string","required":true},"alcoholContent":{"dataType":"string","required":true},"style":{"dataType":"string","required":true},"name":{"dataType":"string","required":true}}},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -77,7 +78,7 @@ export function RegisterRoutes(app: express.Router) {
             function (request: any, response: any, next: any) {
             const args = {
                     id: {"in":"path","name":"id","required":true,"dataType":"string"},
-                    requestBody: {"in":"body","name":"requestBody","required":true,"dataType":"nestedObjectLiteral","nestedProperties":{"discription":{"dataType":"string","required":true},"alcoholContent":{"dataType":"string","required":true},"style":{"dataType":"string","required":true},"name":{"dataType":"string","required":true}}},
+                    requestBody: {"in":"body","name":"requestBody","required":true,"dataType":"nestedObjectLiteral","nestedProperties":{"description":{"dataType":"string","required":true},"alcoholContent":{"dataType":"string","required":true},"style":{"dataType":"string","required":true},"name":{"dataType":"string","required":true}}},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa

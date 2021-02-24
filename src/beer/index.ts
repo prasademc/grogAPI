@@ -1,4 +1,3 @@
-import * as express from "express";
 import { BeerModel } from "../schemas/beer";
 import { Beer } from "../models/beer.model";
 import { Body, Controller, Delete, Get, Post, Put, Route } from "tsoa";

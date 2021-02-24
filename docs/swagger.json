@@ -8,6 +8,9 @@
 		"schemas": {
 			"Beer": {
 				"properties": {
+					"_id": {
+						"type": "string"
+					},
 					"name": {
 						"type": "string"
 					},
@@ -17,15 +20,16 @@
 					"alcoholContent": {
 						"type": "string"
 					},
-					"discription": {
+					"description": {
 						"type": "string"
 					}
 				},
 				"required": [
+					"_id",
 					"name",
 					"style",
 					"alcoholContent",
-					"discription"
+					"description"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -82,7 +86,7 @@
 						"application/json": {
 							"schema": {
 								"properties": {
-									"discription": {
+									"description": {
 										"type": "string"
 									},
 									"alcoholContent": {
@@ -96,7 +100,7 @@
 									}
 								},
 								"required": [
-									"discription",
+									"description",
 									"alcoholContent",
 									"style",
 									"name"
@@ -133,7 +137,7 @@
 						"application/json": {
 							"schema": {
 								"properties": {
-									"discription": {
+									"description": {
 										"type": "string"
 									},
 									"alcoholContent": {
@@ -147,7 +151,7 @@
 									}
 								},
 								"required": [
-									"discription",
+									"description",
 									"alcoholContent",
 									"style",
 									"name"
